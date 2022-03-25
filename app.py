@@ -39,8 +39,11 @@ def create_session():
 def display_question(current_question):
     """ Renders template for next question """
 
-
     question_num = session["question"]
+    
+    if current_question != question_num:
+        flash(f"question {current_question} does not exist!")
+        return redirect(f"/question/{question_num}")
 
     #should be redirecting not rendering
     # could shorten it by injecting survey and pluck choices from jinja on template page

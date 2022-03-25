@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
+  
+  {% for message in get_flashed_messages() %}
+  <h3>{{ message }}</h3>
+  {% endfor %}
 
   <h1>{{ question_num.question }}</h1>
 
