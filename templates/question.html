@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 
-  <h1>{{ question.question }}</h1>
+  <h1>{{ question_num.question }}</h1>
 
   <form action="/answer" method="POST">
-      {{% for choice in choices}}
+      {% for choice in choices %}
       <!-- you should have one item like this for every choice -->
       <p>
         <input
@@ -13,10 +13,10 @@
             value="{{ choice }}">
 
         {{ choice }}
-        
+
       </p>
-      
-      {{% endfor %}}
+
+      {% endfor %}
     <button>Continue</button>
   </form>
 
